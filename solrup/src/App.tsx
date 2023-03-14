@@ -23,6 +23,7 @@ function App() {
             <Route path="/album" element={<Album />} />
             <Route path="/pricing" element={<Pricing />} />
             <Route path="/checkout" element={<Checkout />} />
+            <Route path='/' element={<SignIn/>} />
           </Routes>
         </Router>
       </main>
