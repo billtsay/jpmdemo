@@ -15,7 +15,16 @@ const AppsList: AppTp[] = [
         imageUrl:
             'https://assets.ccbp.in/frontend/react-js/app-store/social-facebook.png',
         website:
-            'http://localhost:5555',
+            'http://localhost:3002',
+        category: 'SOCIAL',
+    },
+    {
+        appId: 1,
+        appName: 'Fakebook*',
+        imageUrl:
+            'https://assets.ccbp.in/frontend/react-js/app-store/social-facebook.png',
+        website:
+            'http://localhost:3002',
         category: 'SOCIAL',
     },
     {

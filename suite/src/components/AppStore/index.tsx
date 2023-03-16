@@ -12,8 +12,11 @@ class AppStore extends Component {
   }
 
   clickme = (app: AppTp) => {
-    this.setState({ useApp: true, website: app.website });
-    window.open(app.website);
+    if (app.appId == 0) {
+      this.setState({ useApp: true, website: app.website });
+    } else {
+      window.open(app.website, app.appName);
+    }
   }
 
   homebutton = () => {
