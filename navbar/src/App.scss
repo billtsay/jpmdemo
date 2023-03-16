@@ -8,3 +8,22 @@ body {
 main {
   padding: 0px 0px 0px 0px;
 }
+
+.menuBtn {
+  align-self: center;
+  align-self: flex-start;  
+  justify-self: flex-end;
+  color: #B2BAC2;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  padding-left: 20px;
+}
+
+.Topbar {
+  background-color: darkblue;
+  height: 40px;
+  width: 100vw;
+  align-items: center;
+  justify-items: center;
+}

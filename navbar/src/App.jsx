@@ -1,24 +1,44 @@
 import {
-  BrowserRouter,
   Routes,
   Route,
 } from "react-router-dom";
 import './App.scss';
-import Sidenav from './Components/Sidenav';
 import Explore from "./Pages/Explore";
 import Home from "./Pages/Home";
 import Settings from "./Pages/Settings";
 import Statistics from "./Pages/Statistics";
-import Topbar from './Components/Topbar';
+import KeyboardDoubleArrowRightIcon from '@mui/icons-material/KeyboardDoubleArrowRight';
+import KeyboardDoubleArrowLeftIcon from '@mui/icons-material/KeyboardDoubleArrowLeft';
+import { useState } from "react";
+import styles from "./Components/sidenav.module.scss"
+import { NavLink } from "react-router-dom";
+import { navData } from "./lib/navData";
 
 function App() {
+  const [open, setopen] = useState(true)
+  const toggleOpen = () => {
+      setopen(!open)
+  }
+
   return (
     <div>
       <header>
-        <Topbar />
+      <div className='Topbar'>
+            <button className='menuBtn' onClick={toggleOpen}>
+                {open ? <KeyboardDoubleArrowLeftIcon /> : <KeyboardDoubleArrowRightIcon />}
+            </button>
+        </div>
       </header>
       <div className="App">
-        <Sidenav />
+      <div className={open?styles.sidenav:styles.sidenavClosed}>
+        {navData.map(item =>{
+            return <NavLink key={item.id} className={styles.sideitem} to={item.link}>
+            {item.icon}
+            <span className={styles.linkText}>{item.text}</span>
+        </NavLink>
+        })}
+    </div>
+
         <main>
           <Routes>
             <Route path="/" element={<Home />} />
